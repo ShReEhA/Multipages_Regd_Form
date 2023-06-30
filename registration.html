@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <h2>College Registration Form</h2>
+        <h5 style="width: 500px;">Thank you for applying to our college. Please fill out the form below to complete the registration process for admission.</h5>
+        
+        <form style="width: 95% ; margin: 2% auto;">
+            <div style="margin: auto;">
+                <label for="first-name">Name:</label><br>
+                <input type="text" id="first-name" placeholder="First" required>
+                <input type="text" id="last-name" placeholder="Last" >
+            </div><br>
+            
+            <div>
+                <label for="date-of-birth">Date of Birth:</label><br>
+                <input type="date" id="date-of-birth" required>
+            </div><br>
+            
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" required placeholder="youremail@email.com">
+            </div><br>
+            
+            <div>
+                <label for="father-name">Father's Name:</label><br>
+                <input type="text" id="father-name" required placeholder="first-name">
+                <input type="text" id="father-last-name" placeholder="last-name">
+            </div><br>
+            
+            <div>
+                <label for="mother-name">Mother's Name:</label><br>
+                <input type="text" id="mother-name" required placeholder="first-name">
+                <input type="text" id="mother-last-name" placeholder="last-name">
+            </div><br>
+
+            <div style="margin: 10px;">
+                Gender:<br>
+                <input type="radio" id="male-gender" name="gender" required><label for="male-gender">Male</label><br>
+                <input type="radio" id="female-gender" name="gender" required><label for="female-gender">Female</label><br>
+            </div>
+        
+            <div style="margin: 1opx;">
+                <label for="nationality">Nationality:</label><br>
+                <input type="text" id="nationality" required placeholder="Nationality">
+            </div>
+
+            <div>
+                Home Address:<br>
+                <input type="text" id="street-address" placeholder="Street Address" required><br>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="country" placeholder="Country" required>
+            </div>
+
+            <div>
+                <div>
+                    Telephone Mobile (10 digits):<br>
+                    <input type="tel" id="telephone-mobile" pattern="[0-9]{10}" required placeholder="99999-99999"><br>
+                    
+                </div>
+
+            <div>
+                In a few sentences, write down why do you want to join our college:<br>
+                <textarea id="reason" rows="4" required placeholder="why do you want to join our college?"></textarea><br>
+            </div>
+
+            <div class="button">
+                
+                <button type="submit" onclick="goToNextPage(2)"> <a href="./education_form.html" style="text-decoration: none;">Next</a></button>
+            </div></a>
+
+
+
+            <script>
+                function goToNextPage(goToNextPage2) {
+               
+                    if (validateForm()) {
+        
+                        showPage(goToNextPage(2));
+                    }
+                }
+                function validateForm() {
+            
+            var firstName = document.getElementById('first-name').value.trim();
+            var lastName = document.getElementById('last-name').value.trim();
+
+            if (firstName === '' || lastName === '') {
+                alert('Please the required fields');
+                return false;
+            }
+
+            return true;
+        }
+
+        function storeFormData() {
+            // Get the form data
+            var formData = {
+                firstName: document.getElementById('first-name').value.trim(),
+                lastName: document.getElementById('last-name').value.trim(),
+            }
+            };
+            </script>
+
+        </form>
+    </div>
+</body>
+</html>
